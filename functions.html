@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>functions declaration and expression</title>
+</head>
+<body>
+  <script>
+    function walk(){
+      document.write('walk');
+
+    }
+    // function expression
+    let run = function(){
+      document.write('run');
+    };
+   
+
+     // anonymous function 
+     let run = function(){
+      document.write('run');
+    };
+    let move = run;
+    run();
+    move();
+
+
+
+  </script>
+</body>
+</html>

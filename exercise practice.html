@@ -201,8 +201,18 @@ document.write(pattern);
 <script>
 
 // exercise prime number
+function showprime(limit){
+  for (let number =2; number<= limit; number++)
+  if (isprime(number)) document.write(number);
+}
 
-show
+
+function isprime(number){
+  for (let factor = 2; factor< number; factor++)
+  if (number % factor ===o )
+  return false;
+return true;
+}
 
 </script>
 
