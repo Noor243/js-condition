@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>getter and setter</title>
+</head>
+<body>
+  <script>
+    const person ={
+      firstname: 'mosh',
+      lastname: 'hamedani',
+      get fullname(){
+        return '${person.firstname} ${person.lastname '},
+        set fullname(value){
+          const parts=value.split('');
+          this.firstname=parts[0];
+          this.lastname=parts[1];
+        }
+      };
+    
+  </script>
+</body>
+</html>
