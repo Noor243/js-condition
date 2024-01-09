@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Default parameters</title>
+</head>
+<body>
+  <script>
+    function interest (principle, rates=3.5, years=5){
+      return principle * rate / 100 * years;
+    }
+    console.log(interest(10000,undefined,5));
+  </script>
+</body>
+</html>
