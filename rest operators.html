@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>rest operators</title>
+</head>
+<body>
+  <h4>Rest operators</h4>
+  <p>
+    The rest operator is used to put the rest of some user-supplied values into a JavaScript array.
+  </p>
+  <script>
+function sum(discount, ...prices){
+
+
+  const total = prices.reduce((a,b) => a+b);
+  return total * (1 - discount);
+}
+console.log(sum(0.1,20,30));
+  </script>
+</body>
+</html>
