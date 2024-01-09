@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>arguments vs parameter</title>
+</head>
+<body>
+  <h4>what is difference between arguments and parameters</h4>
+  <p>Function parameters are the names listed in the function's definition. Function arguments are the real values passed to the function.</p>
+  <h1>Arguments</h1>
+  <script>
+    // let x = 1;
+    // x = 'a' ;
+    function sum (){
+      let total = 0;
+      for (let value of arguments)
+      total += value;
+    return total;}
+
+// console.log(arguments);
+//     return a + b ;
+//   }
+
+  console.log(sum(1,2,3,4,5));
+
+      </script>
+</body>
+</html>
