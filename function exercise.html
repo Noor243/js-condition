@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>function exercise</title>
+</head>
+<body>
+  <h2>sum of arguments</h2>
+  <script>
+    // sum ([sum 1,2,,3,4])
+    console.log(sum([1,2,3,4]));
+function sum(...items){
+if(items.length===1 && array.isarray(items[0])) 
+items = [...items[0]];
+  return items.reduce((a,b)=> a+b);
+}
+
+
+
+  </script>
+
+
+
+<script>
+// exercise 2
+// area of cirlce
+const circle={
+  radius:1,
+  get area(){
+    return math.pi * this.radius * this.radius;
+  }
+  };
+
+console.log(circle.area);
+
+</script>
+
+<script>
+  // exercise 3
+  // error handling
+try{
+  const numbers = [1,2,3,4];
+  const count = countoccurrences(null,1);
+  console.log(count);
+}
+catch (e){
+  console.log(e.message);
+
+}
+  function countoccurrences(array, searchelement){
+    if (!array.isarray(array))
+    throw new error('invalid array.');
+  return array.reduce((accumulator,current)=>{
+const occurrence=(current===searchelement)? 1:0; return accumulator + occurrence; },0 );
+  }
+</script>
+</body>
+</html>
