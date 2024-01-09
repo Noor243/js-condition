@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hoisting</title>
+</head>
+<body>
+  <h4>what is hoisting</h4>
+  <p>In JavaScript, Hoisting is the default behavior of moving all the declarations at the top of the scope before code execution. </p>
+  <script>
+walk(); undefined
+function walk(){
+  console.log('walk');
+}
+
+run();
+const run = function (){
+  console.log('run');
+};
+
+
+  </script>
+</body>
+</html>
