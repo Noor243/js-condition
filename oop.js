@@ -157,3 +157,207 @@ function Stopwatch() {
     get: function() { return duration; }
   });
 }
+
+// creating your own prototypical inheritance
+
+function circle(radius){
+  this.radius = radius;
+}
+
+circle.prototype.draw = function(){
+  console.log('draw');
+}
+
+circle.prototype.duplicate = function (){
+  console.log('duplicate');
+}
+
+function square(){
+}
+
+square.prototype.duplicate = function(){
+
+}
+
+
+
+function shape(){
+  
+}
+
+shape.prototype.duplicate = function(){
+  console.log('duplicate');
+}
+
+function circle(radius){
+  this.radius = radius;
+}
+
+circle.prototype = object.create(object.prototype);
+circle.prototype=Object.create(shape.prototype);
+
+circle.prototype.draw = function(){
+  console.log('draw');
+}
+
+const s = new shape();
+const c = new circle(1);
+
+
+// calling the super constructor
+
+class SuperClass {
+  // Superclass constructor
+   SuperClass() {
+      System.out.println("Superclass constructor called.");
+  }
+}
+
+class SubClass extends SuperClass {
+  // Subclass constructor
+   SubClass() {
+      // Calling the superclass constructor using super()
+      super();
+      System.out.println("Subclass constructor called.");
+  }
+}
+
+class Main {
+  static main(String) {
+      // Creating an instance of the subclass
+      subObj = new SubClass();
+  }
+}
+
+
+
+// Intermediate function (superclass)
+function Animal(name) {
+  this.name = name;
+}
+
+Animal.prototype.eat = function () {
+  console.log(this.name + " is eating");
+};
+
+// Subclass (inherits from Animal)
+function Dog(name, breed) {
+  // Call the superclass constructor
+  Animal.call(this, name);
+  this.breed = breed;
+}
+
+// Set up the prototype chain for inheritance
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;
+
+// Add a method specific to Dog
+Dog.prototype.bark = function () {
+  console.log("Woof! Woof!");
+};
+
+// Create instances
+const myAnimal = new Animal("Generic Animal");
+const myDog = new Dog("Buddy", "Golden Retriever");
+
+// Call methods on instances
+myAnimal.eat(); // Generic Animal is eating
+myDog.eat();    // Buddy is eating
+myDog.bark();   // Woof! Woof!
+
+
+
+
+// Define a base class
+function Animal(name) {
+  this.name = name;
+}
+
+// Add a method to the base class
+Animal.prototype.sayHello = function() {
+  return "Hello, I am " + this.name;
+};
+
+// Define a subclass that inherits from the base class
+function Dog(name, breed) {
+  // Call the superclass constructor
+  Animal.call(this, name);
+  this.breed = breed;
+}
+
+// Set up the subclass prototype to inherit from the superclass prototype
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;
+
+// Override the sayHello method in the subclass
+Dog.prototype.sayHello = function() {
+  return "Woof, I am " + this.name + " the " + this.breed;
+};
+
+// Create instances of the classes
+var animal = new Animal("Generic Animal");
+var dog = new Dog("Buddy", "Golden Retriever");
+
+// Test method calls
+console.log(animal.sayHello()); // Output: Hello, I am Generic Animal
+console.log(dog.sayHello());    // Output: Woof, I am Buddy the Gold
+
+
+
+
+// exercise protocol inheritance
+
+
+
+
+
+// exercise polymorphism
+
+function HtmlElement() { 
+  this.click = function() { 
+    console.log('clicked');
+  }
+}
+
+HtmlElement.prototype.focus = function(){
+  console.log('focued');
+}
+
+function HtmlSelectElement(items = []) { 
+  this.items = items;
+  
+  this.addItem = function(item) { 
+    this.items.push(item);
+  }
+
+  this.removeItem = function(item) {
+    this.items.splice(this.items.indexOf(item), 1);
+  }
+
+  this.render = function() {
+    return `
+<select>${this.items.map(item => `
+  <option>${item}</option>`).join('')}
+</select>`;
+  }  
+}
+HtmlSelectElement.prototype = new HtmlElement(); 
+HtmlSelectElement.prototype.constructor = HtmlSelectElement;
+
+function HtmlImageElement(src) { 
+  this.src = src; 
+  
+  this.render = function() {
+    return `<img src="${this.src}" />`
+  }
+}
+HtmlImageElement.prototype = new HtmlElement(); 
+HtmlImageElement.prototype.constructor = HtmlImageElement;
+
+const elements = [
+  new HtmlSelectElement([1, 2, 3]),
+  new HtmlImageElement('http://')
+];
+
+for (let element of elements) 
+  console.log(element.render());
