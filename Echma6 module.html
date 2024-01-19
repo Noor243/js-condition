@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Echma6 module</title>
+</head>
+<body>
+  <script>
+    // Modules
+    // increase maintanabillity
+    // reuse 
+    // abstract
+// no modules in es5
+// popular modules   
+// AMD used in  BROWSER
+// COMMON.JS used in node.js
+// UMD universal model defination used in browser/node.js
+// ES6 MODULES used in browsers
+ 
+  </script>
+  <script>
+    // common js module 
+    const_radius = new WeakMap();
+    class Circle{
+      constructor(radius){
+        _radius.set(this,radius);
+      }
+
+
+    draw(){
+      console.log('circle with radius' + _radius.get(this));
+    }
+    }
+    module.exports = circle;
+  </script>
+  <script>
+    // ES6 Modules
+    class circle{
+      constructor(radius){
+        _radius.set(this,radius);
+      }
+      draw(){
+        console.log('circle with radius' + _radius.get)
+      }
+    }
+  </script>
+  <script>
+    // ES6 tooling
+    // webpack
+    import {circle} from './circle';
+    const c = new circle(10);
+    c.draw ();
+    console.log('changed');
+  </script>
+</body>
+</html>

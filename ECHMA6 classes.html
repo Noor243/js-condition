@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ECHMA6 classes</title>
+</head>
+<body>
+  <script>
+    // Echma6 classes lecture 1
+    // babel.js
+    class circle{
+      constructor(radius){
+        this.radius=radius;
+        this.move = function(){}
+      }
+      draw(){
+        console.log('draw');
+      }
+    }
+    const c  = circle(1);
+  </script>
+  <script>
+    // hoisting in ECHMA6
+    const a  = new circle();
+    // class declaration
+
+    class circle{
+
+    }
+
+    // class expression
+    const square = class{
+
+    };
+
+
+  </script>
+  <script>
+// static method
+
+class mobile{
+  static disp(){
+    return "static method";
+  }
+}
+document.write(mobile.disp());
+// in echma6
+class math{
+  static abc(value){
+
+  }
+}
+math.abc()
+  </script><br>
+
+  <script>
+    //  this keyword
+   
+      // if alone this keyword refer to global keyword
+    var girl ={
+    firstName :  "No",
+    secondName : "or",
+    fullName : function(){
+    return this.firstName + this.secondName;
+  }
+};
+document.write(girl.fullName());
+
+
+function remove(variable){
+  variable.style.display = "none";
+
+}
+
+</script><br>
+<button onclick="remove(this)">click me to hide me</button>
+<script>
+  // private member using symbol
+  // const _radius = Symbol();
+  // const _draw = Symbol();
+  // class Circle{
+  //   constructor(radius){
+      // this.radius = radius;
+  //     this[_radius] = radius;
+  //   }
+  //   [_draw](){
+  //   }
+  // }
+  // const c = new Circle(1);
+  // const key = 
+  // object.getOwnPropertySymbol(c)[0];
+  // console.log(c[key]);
+</script>
+<script>
+
+  // private members using weakmaps
+//   const _radius = new weakMap();
+// const_move = new weakMap();
+// const privateprops = new weakMap();
+//   class Circle{
+//     constructor(radius){
+// privateprops.set(this,{
+//   radius: radius,
+//   move:()=>{
+
+//   }
+// });
+// privateprops.get(this)
+// _radius.set(this,radius);
+// _move.set(this,()=>{
+// console.log('move',this);
+
+// });
+</script>
+<script>
+// getter and setter
+// const_radius = new WeakMap();
+
+// class circle{
+//   constructor(radius){
+//     _radius.set(this,radius);
+//   }
+
+//   get radius(){
+//     return _radius.get(this);
+//   }
+// set radius(value){
+//   if (value<=0)throw new Error('invalid radius'  _radius.set(this,value);
+// }
+// }
+
+// const c = new circle(1);
+
+</script>
+
+<script>
+  // inheritance
+
+  class shape{
+    constructor(color){
+      this.color=color;
+
+    }
+
+    move(){
+      console.log('move');
+    
+    }
+  }
+
+  class circle extends shape{
+    constructor(color){
+      super(color);
+    }
+
+    draw(){
+      console.log('draw');
+    }
+  }
+  // const c = new circle('red' , 1);
+</script>
+
+<script>
+//  method riding 
+class shape{
+  move(){
+    console.log('move');
+  }
+}
+
+class circle extends shape{
+  move(){
+    super.move();
+    console.log('circle move');
+  }
+}
+const b = new circle();
+</script>
+
+<script>
+
+  // exercise
+
+  const _items = new WeakMap();
+
+  class stack{
+    constructor(){
+      _items.set(this, []);
+    }
+
+    push(obj){
+      _items.get(this).push(obj);
+    }
+
+
+    pop(){
+
+
+      const items = _items.get(this);
+      if (_items.get(this).length===0)
+      throw new Error('stack is empty.');
+
+    return item.pop();
+    }
+
+
+    peek(){
+      const items = _items.get(this);
+
+      if(items.length===0)
+      throw new Error('stack is empty.');
+
+      return otems[items.length - 1];
+    }
+  }
+</script>
+</body>
+</html>
